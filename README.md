@@ -5,8 +5,8 @@
 1. Создаем схему yii2task или запускаем docker-compose файл
 2. В yii2task должна быть стандартная для Yii2 таблица ползователей (поля написаны в классе common/models/User.php)
 3. Мигрируем таблицы для DBManager (yii migrate --migrationPath=@yii/rbac/migrations/)
-4. В auth_item создаем роли admin, client, outsource, clientModerator, outsourceModerator
-5. В auth_item_child admin родитель client, ousource; client родитель clientModerator; outsource родитель outsourceModerator
+4. В auth_item создаем роли admin, client, outsource, clientModerator, outsourceModerator. Создаем права clientCRUD, outsourceCRUD
+5. В auth_item_child admin родитель client, ousource; client родитель clientModerator, clientCRUD; outsource родитель outsourceModerator, outsourceCRUD
 6. В auth_assigment вручную указываем id пользователя с ролью admin. Все остальные пользователи будут в эту таблицу попадать автоматически при регистрации
 7. Запустить серевер. localhost:20080 - frontend, localhost:21080 - backend
 
